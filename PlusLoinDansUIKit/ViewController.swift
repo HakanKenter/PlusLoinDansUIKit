@@ -8,6 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var btn: UIButton!
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -22,6 +24,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("View Did Load")
+        self.view.isUserInteractionEnabled = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,6 +35,10 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("Did A")
+        let frame = self.view.frame
+        let size = frame.size
+        print("Taille de la vue du UIViewController est de : \(size)")
+        let btnFrame = btn.frame
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -44,6 +51,11 @@ class ViewController: UIViewController {
         print("Did D")
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let t = touches.first else { return }
+        let position = t.location(in: self.view)
+        print("Le CGPoint touché est : \(position)\n. Sont X: est de \(position.x) et son Y est de \(position.y)")
+    }
 
 }
 

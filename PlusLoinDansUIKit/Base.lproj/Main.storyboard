@@ -33,6 +33,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Plus loin dans UIKit" id="Sqp-B6-vxo"/>
+                    <connections>
+                        <outlet property="btn" destination="2Tu-6R-JVN" id="fDq-JU-dHH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -48,7 +51,16 @@
                         <viewLayoutGuide key="safeArea" id="HOO-Xc-wGh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="HWL-zA-05Y"/>
+                    <navigationItem key="navigationItem" id="HWL-zA-05Y">
+                        <barButtonItem key="rightBarButtonItem" title="Supp" id="fqC-GX-WcH">
+                            <connections>
+                                <action selector="btnPressed:" destination="8oc-VP-DU9" id="4y6-9n-6Bd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="suppBtn" destination="fqC-GX-WcH" id="E0L-mK-lC7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSn-5j-tvl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
